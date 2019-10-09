@@ -44,7 +44,7 @@ DEFAULT_PATH_OUT = '/Users/vladislavsavinov/Projects/ppl-text-index-acforvs/src/
 
 NO_SUCH_FILE = 'Please, check the corectness of the submitted filepath and try again...'
 
-OUTPUT_MESS = '{}   : {} times on pages'
+OUTPUT_MESS = '{}   : {} time(s) on pages'
 
 PAGE_DESCR = "page {} : {} times\n"
 
