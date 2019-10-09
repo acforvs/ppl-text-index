@@ -8,8 +8,9 @@ def main():
         return
     filepath_in, filepath_out, topamount, lang = resulted_arg[0], resulted_arg[1], resulted_arg[2], resulted_arg[3]
     #proccessing:
-    sorted_freq_dict = get_data_default(filepath_in, lang)
-    process(filepath_out, sorted_freq_dict, topamount)
+    data = get_data_default(filepath_in, lang)
+    sorted_freq_dict, word_index = data[0], data[1]
+    process(filepath_out, sorted_freq_dict, topamount, word_index)
 
 if __name__ == '__main__':
     main()

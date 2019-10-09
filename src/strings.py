@@ -1,4 +1,3 @@
-
 USAGE = '''USAGE:
 [-i] 'path/to/inputfile'    : read data from the inputfile.
 Example:
@@ -45,8 +44,14 @@ DEFAULT_PATH_OUT = '/Users/vladislavsavinov/Projects/ppl-text-index-acforvs/src/
 
 NO_SUCH_FILE = 'Please, check the corectness of the submitted filepath and try again...'
 
-OUTPUT_MESS = 'Form of the word "{}" was found {} times in the text'
+OUTPUT_MESS = '{}   : {} times on pages'
 
-rus_pattern = '[а-я]+'
+PAGE_DESCR = "page {} : {} times\n"
 
-eng_pattern = '[a-z]+'
+SEPARATOR = '__________________________________________________________________________'
+
+rus_pattern = "((?:[а-я]+[-']?)*[а-я]+)"
+
+eng_pattern = "((?:[a-z]+[-']?)*[a-z]+)"
+
+gen_pattern = "((?:[а-я]+[-']?)*[а-я]+)|((?:[a-z]+[-']?)*[a-z]+)"

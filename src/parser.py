@@ -9,7 +9,6 @@ def parser():
 
     group_input = parser.add_mutually_exclusive_group()
     group_output = parser.add_mutually_exclusive_group()
-    group_lang = parser.add_mutually_exclusive_group()
 
     group_input.add_argument('-i', '--input', action='store', nargs=1, type=str, help='Setting path to the input data file')
     group_input.add_argument('-io', '--default_input', action='store_true', help='Read from the default file')
@@ -17,13 +16,14 @@ def parser():
     group_output.add_argument('-o', '--output', action='store', nargs=1, type=str, help='Setting path to the output data file')
     group_output.add_argument('-do', '--default_output', action='store_true', help='Result to the default file')
     
-    group_lang.add_argument('-p', '--pattern', action='store', nargs=1, type=str, help='Setting the language')
+    parser.add_argument('-p', '--pattern', action='store', type=str, help='Setting the language')
     res = parser.parse_args()
 
     return res
 
 def process_parser():
     res = parser()
+    topamount, filepath_out, lang = None, None, None
     #arguments handler:
     if not (res.input or res.output or res.default_input or res.default_output or res.usage or res.pattern):
         print(SPECIFY_PATH, '\n')
@@ -45,13 +45,9 @@ def process_parser():
         filepath_out = res.output[0]
     elif (not res.output and res.default_output):
         filepath_out = DEFAULT_PATH_OUT
-    else:
-        filepath_out = None
-    
+
     if res.count:
         topamount = res.count[0]
-    else:
-        topamount = None
 
     if res.pattern:
         lang = res.pattern[0]
