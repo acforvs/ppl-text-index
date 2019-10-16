@@ -1,5 +1,6 @@
-import pymorphy2 
+import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
+
 
 def normalize(word):
     '''

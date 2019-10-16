@@ -1,6 +1,7 @@
 from os import path
 from strings import NO_SUCH_FILE, OUTPUT_MESS, SEPARATOR, PAGE_DESCR
 
+
 def data_to_output(sorted_dict, topamount, word_index):
     '''
     data -> output form
@@ -28,6 +29,7 @@ def data_to_output(sorted_dict, topamount, word_index):
             cnt_printed += 1
     return res
 
+
 def process(filepath_out, sorted_dict, topamount, word_index):
     '''
     console or file output
@@ -41,11 +43,10 @@ def process(filepath_out, sorted_dict, topamount, word_index):
             print(SEPARATOR)
     else:
 
-            with open(filepath_out, 'w') as f:
-                res = data_to_output(sorted_dict, topamount, word_index)
-                for line in res:
-                    f.write(line[0] + '\n')
-                    for page_info in line[1]:
-                        f.write(page_info)
-                    f.write(SEPARATOR + '\n')
-       
+        with open(filepath_out, 'w') as f:
+            res = data_to_output(sorted_dict, topamount, word_index)
+            for line in res:
+                f.write(line[0] + '\n')
+                for page_info in line[1]:
+                    f.write(page_info)
+                f.write(SEPARATOR + '\n')
